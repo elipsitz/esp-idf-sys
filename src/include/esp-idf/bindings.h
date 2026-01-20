@@ -720,13 +720,17 @@
 #ifdef ESP_IDF_COMP_ESPRESSIF__ESP_TINYUSB_ENABLED
 #include "tinyusb.h"
 #include "tinyusb_net.h"
+#if __has_include("tinyusb_types.h")
 #include "tinyusb_types.h"
+#endif
 #if CONFIG_TINYUSB_CDC_ENABLED
 #include "tusb_cdc_acm.h"
 #endif
 #include "tusb_config.h"
 #include "tusb_console.h"
+#if __has_include("tusb_tasks.h")
 #include "tusb_tasks.h"
+#endif
 #ifdef ESP_IDF_COMP_VFS_ENABLED
 #include "tusb_msc_storage.h"
 #include "vfs_tinyusb.h"
